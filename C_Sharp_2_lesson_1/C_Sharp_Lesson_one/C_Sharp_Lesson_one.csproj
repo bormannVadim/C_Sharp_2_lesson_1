@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DE883179-F7A1-46D9-A804-CA69FEF5D385}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>C_sharp_lesson_one</RootNamespace>
     <AssemblyName>C_sharp_lesson_one</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>

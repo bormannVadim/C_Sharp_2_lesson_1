@@ -51,15 +51,10 @@ namespace C_sharp_lesson_one
         {
             // загружаем базовые объекты
             _objs = new BaseObject[20];
-
-            for (int i = 0; i < _objs.Length / 4; i++)
-                _objs[i] = new BaseObject(new Point(600, i * 30), new Point(-i, -i), new Size(10, 10));
-            
-            // половина объектов это круги, половина - звёды
+           // половина объектов это круги, половина - звёды
             // загружаем звёзды
-            for (int i = _objs.Length / 4; i < _objs.Length/2; i++)
+            for (int i = 0; i < _objs.Length/2; i++)
                 _objs[i] = new Star(new Point(600, i * 30), new Point(-i, 0), new Size(10, 10));
-
 
             // My object
             for (int i = _objs.Length / 2; i < _objs.Length; i++)
