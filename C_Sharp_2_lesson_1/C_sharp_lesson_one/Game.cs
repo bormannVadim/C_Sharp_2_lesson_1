@@ -16,21 +16,31 @@ namespace C_sharp_lesson_one
         // Ширина и высота игрового поля
         public static int Width { get; set; }
         public static int Height { get; set; }
-        static Game()
+        public Game()
         {
+
         }
+
+        public Game(int _windth, int _height)
+        {
+            if (_windth > 1000 )
+                throw new ArgumentOutOfRangeException("Width", "More than 1000.");
+            else if(_height>1000)
+                throw new ArgumentOutOfRangeException("Height", "More than 1000");
+            else
+            {
+                Width = _windth;
+                Height = _height;
+            }
+        }
+
         public static void Init(Form form)
         {
-            // Графическое устройство для вывода графики            
             Graphics g;
-            // Предоставляет доступ к главному буферу графического контекста для текущего приложения
-            _context = BufferedGraphicsManager.Current;
+             _context = BufferedGraphicsManager.Current;
             g = form.CreateGraphics();
-            // Создаем объект (поверхность рисования) и связываем его с формой
-            // Запоминаем размеры формы
-            Width = form.ClientSize.Width;
-            Height = form.ClientSize.Height;
-            // Связываем буфер в памяти с графическим объектом, чтобы рисовать в буфере
+            form.Width = Width;
+            form.Height = Height;
             Load();
             Buffer = _context.Allocate(g, new Rectangle(0, 0, Width, Height));
             Timer timer = new Timer { Interval = 100 };
@@ -59,7 +69,6 @@ namespace C_sharp_lesson_one
             // My object
             for (int i = _objs.Length / 2; i < _objs.Length; i++)
                 _objs[i] = new MyObject(new Point(600, i * 30), new Point(-i, +i), new Size(10, 10));
-
         }
 
 
