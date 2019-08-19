@@ -9,10 +9,8 @@ namespace C_sharp_lesson_one
 {
     class MyObject:BaseObject
     {
-        public MyObject(Point pos, Point dir, Size size) : base(pos, dir, size)
-        {
+        public MyObject(Point pos, Point dir, Size size) : base(pos, dir, size) { }
 
-        }
 
         public override void Draw()
         {
